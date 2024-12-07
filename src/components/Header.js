@@ -1,9 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+import { FiShoppingCart } from 'react-icons/fi';
 
-const Header = () => (
-  <header className="header">
-    <h1>Xing-Ling</h1>
-  </header>
-);
+const Header = () => {
+  const { cart } = useCart();
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  return (
+    <header className="bg-gradient-to-r from-teal-500 to-blue-500 text-white py-4 px-8 flex justify-between items-center">
+      <h1 className="text-2xl font-bold">
+        <Link to="/">Xing-Ling</Link>
+      </h1>
+      <Link to="/cart" className="relative">
+        <FiShoppingCart size={24} />
+        {totalItems > 0 && (
+          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-sm rounded-full w-6 h-6 flex items-center justify-center">
+            {totalItems}
+          </span>
+        )}
+      </Link>
+    </header>
+  );
+};
 
 export default Header;
