@@ -7,6 +7,7 @@ import ProductPage from './components/ProductPage';
 import CartPage from './components/CartPage';
 import CheckoutPage from './components/CheckoutPage';
 import { CartProvider } from './context/CartContext';
+import CustomerPage from './components/CustomerPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/product/:id" element={<ProductPage />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />
+              <Route path="/customer/:id" element={<CustomerPage />} /> {/* Nova Rota */}
             </Routes>
           </main>
           <Footer />
