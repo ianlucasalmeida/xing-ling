@@ -31,3 +31,10 @@ body {
   max-width: 100%;
   height: auto;
 }
+img {
+  border-radius: 50%; /* Exemplo de borda arredondada */
+  transition: transform 0.2s;
+}
+img:hover {
+  transform: scale(1.1); /* Leve aumento no hover */
+}

@@ -40,13 +40,19 @@ const ProductPage = () => {
   return (
     <div className="container mx-auto p-8 flex flex-col md:flex-row gap-8">
       <div className="flex-shrink-0">
-        <img src={product.image} alt={product.title} className="w-full h-auto object-contain rounded-md" />
+        <img
+          src={product.image}
+          alt={product.title}
+          className="w-64 h-64 object-contain mx-auto md:w-48 md:h-48"
+        />
       </div>
       <div className="flex-grow">
         <h1 className="text-3xl font-bold">{product.title}</h1>
         <p className="text-gray-700 mt-4">{product.description}</p>
         <div className="mt-6">
-          <p className="text-2xl text-teal-600 font-bold">R$ {product.price.toFixed(2)}</p>
+          <p className="text-2xl text-teal-600 font-bold">
+            R$ {product.price.toFixed(2)}
+          </p>
           <div className="flex items-center mt-4 gap-4">
             <label htmlFor="quantity" className="text-gray-700 font-semibold">
               Quantidade:
